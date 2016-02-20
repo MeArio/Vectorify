@@ -25,7 +25,9 @@ function Vector.__mul(a, b)
     end
 end
 
-function Vector.__type()
-    return "Vector"
+function Vector:rotate(angle)
+    self.x = self.x * math.cos(math.rad(angle)) - self.y * math.sin(math.rad(angle))
+    self.y = self.x * math.sin(math.rad(angle)) + self.y * math.cos(math.rad(angle))
 end
+
 return Vector
